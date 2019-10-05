@@ -6,7 +6,8 @@ public class CharacterController : MonoBehaviour
 {
     float Speed = 5.0F;
     float JHeight = 0.7f;
-    private bool Jumping;
+    //efe
+    //private bool Jumping;
     public LayerMask PhysicalLayer;
     private Rigidbody rb;
     public float timeVar;
@@ -18,7 +19,8 @@ public class CharacterController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         col = GetComponent<CapsuleCollider>();
         timeVar = 1;
-        Jumping = false;
+        //efe
+        //Jumping = false;
     }
 
     // Update is called once per frame

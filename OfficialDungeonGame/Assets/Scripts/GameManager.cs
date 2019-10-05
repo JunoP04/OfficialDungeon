@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     public Button startButton;
     public Button exitButton;
     public string mainScene;
+    public 
+
 
     // Start is called before the first frame update
     void Start()
