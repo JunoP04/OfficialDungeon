@@ -6,6 +6,7 @@ public class ColorChanger : MonoBehaviour
 {
     Ray ray;
     RaycastHit hit;
+    public Material newMat;
 
     //var rend = GetComponent.<Renderer>();
 
@@ -22,9 +23,10 @@ public class ColorChanger : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit) && hit.collider.gameObject.tag == "Blue")
         {
-            Renderer rend = GetComponent<Renderer>();
-
-            hit.collider.gameObject.GetComponent<Renderer>().material.shader = Shader.Find("RedST");
+            //Renderer rend = GetComponent<Renderer>();
+            //Material newMat = new Material(source);
+            //newMat.color = Color.green;
+            hit.collider.gameObject.GetComponent<Renderer>().material = newMat;
             //Debug.Log(hit.collider.gameObject.name);
         }
     }

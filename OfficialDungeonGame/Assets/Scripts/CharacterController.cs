@@ -12,6 +12,9 @@ public class CharacterController : MonoBehaviour
     private Rigidbody rb;
     public float timeVar;
     public CapsuleCollider col;
+
+    //new bool check if mouse visible
+    private bool mouseVisible = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,7 +45,11 @@ public class CharacterController : MonoBehaviour
         }
         if (Input.GetKeyDown("escape"))
         {
-            Cursor.lockState = CursorLockMode.None;
+           
+                Cursor.lockState = CursorLockMode.None;
+                mouseVisible = true;
+
+
         }
 
     }
