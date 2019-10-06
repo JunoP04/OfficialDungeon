@@ -8,15 +8,7 @@ public class spawnEnemies : MonoBehaviour
     public Transform spawnPoint;
     public Transform spawnPoint2;
     public Transform spawnPoint3;
-    public Transform spawnPoint4; 
-
-    public float waveNumber = 0f;
-    public float cooldown = 15f;
-    public int interval  = 1;
-    public int timer = 0;
-
-    //private int wave_1Threshold = 15;
-    //private int wave_2Threshold = 30;
+    public Transform spawnPoint4;
 
     public GameObject myPrefab;
     
@@ -25,35 +17,25 @@ public class spawnEnemies : MonoBehaviour
     void Update()
     {
 
-        if(timer == 15)
+        if(Input.GetKey(KeyCode.Backspace))
         { 
         Vector3 position_1 = spawnPoint.position;
         Instantiate(myPrefab, position_1, Quaternion.identity);
         spawnPoint.position += Vector3.forward * Time.deltaTime;
-        Debug.Log("spawned");
+        Debug.Log("[<color=green>SPAWN MECHANIC] - spawned</color>");
         }
-        //Vector3.MoveTowards
+       
 
-        timer = +1;
-
-        if (Time.time >= interval)
+        if (Time.time == 2)
         {
-        interval = Mathf.FloorToInt(Time.time) + 1;
-        UpdateEverySecond();
-
-
-
+            Debug.Log("<color=green>[SPAWN MECHANIC] -2 seconds passed...</color>");
         }
+        
+
+       
 
 
     }
 
-    // Update is called once per second
-    void UpdateEverySecond()
-    {
 
-        Debug.Log("spawn enemies script running");
-        timer = +1;
-
-    }
 }
