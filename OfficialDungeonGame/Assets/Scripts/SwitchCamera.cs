@@ -4,24 +4,24 @@ using UnityEngine;
 
 public class SwitchCamera : MonoBehaviour
 {
-    public Camera cam1;
-    public Camera cam2;
+    public GameObject characterCam;
+    public GameObject skyCube;
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.V) && characterCam.active == true)
         {
-            cam1.enabled = false;
-            cam2.enabled = true;
-            Debug.Log("enabling camera 1");
-        }
+            skyCube.SetActive(true);
+            characterCam.SetActive(false);
+            Cursor.lockState = CursorLockMode.None; 
 
-        if (Input.GetKeyDown(KeyCode.C))
+
+        }
+        else if (Input.GetKeyDown(KeyCode.V) && characterCam.active == false)
         {
-            cam2.enabled = false;
-            cam1.enabled = true;
-            Debug.Log("enabling camera 2");
+            skyCube.SetActive(false);
+            characterCam.SetActive(true);
+            Cursor.lockState = CursorLockMode.Locked;
         }
     }
 }

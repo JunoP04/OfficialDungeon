@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - SphereLeft
+  - SphereRight
+  - MainColor
+  - Blue
+  - Green
+  - Red
   layers:
   - Default
   - TransparentFX
