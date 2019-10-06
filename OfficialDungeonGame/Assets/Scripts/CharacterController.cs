@@ -26,7 +26,7 @@ public class CharacterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(IsGrounded());
+        Debug.Log("<color=blue>[CHARACTER CONTROLLER] -</color>" + IsGrounded());
         float translation = Input.GetAxis("Vertical") * Speed;
         float strafe = Input.GetAxis("Horizontal") * Speed;
         translation *= (Time.deltaTime * timeVar);
