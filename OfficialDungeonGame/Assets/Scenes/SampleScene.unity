@@ -217,6 +217,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newMat: {fileID: 2100000, guid: 4f581fb7d4fab8248ab2d282695c4a75, type: 2}
+  heartPrefab: {fileID: 5836027817671534383, guid: 3c8fdfec00bf14a48aed152539a8b35b,
+    type: 3}
 --- !u!1 &81273163
 GameObject:
   m_ObjectHideFlags: 0
@@ -452,7 +454,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0.203125, z: 0.04296875, w: -0.04296875}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 1.65e-43, w: 0.30859375}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -858,6 +860,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newMat: {fileID: 2100000, guid: 4f581fb7d4fab8248ab2d282695c4a75, type: 2}
+  heartPrefab: {fileID: 5836027817671534383, guid: 3c8fdfec00bf14a48aed152539a8b35b,
+    type: 3}
 --- !u!1 &625643848
 GameObject:
   m_ObjectHideFlags: 0

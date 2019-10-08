@@ -10,6 +10,9 @@ TagManager:
   - Blue
   - Green
   - Red
+  - Heart
+  - HeartRoom
+  - spawnPoint
   layers:
   - Default
   - TransparentFX
