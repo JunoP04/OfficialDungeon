@@ -19,7 +19,7 @@ public class LaunchProjectile : MonoBehaviour
     void ShootBall()
     {
         GameObject go = Instantiate(projectile, spawnPoint.transform.position, Quaternion.identity);
-        Rigidbody rb = go.GetComponent<Rigidbody>();
+        Rigidbody rb = go.GetComponentInChildren<Rigidbody>();
         rb.AddForce(transform.forward * launchVelocity);
         Destroy(go, 1.0f);
     }
