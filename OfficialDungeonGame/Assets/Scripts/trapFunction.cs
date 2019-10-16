@@ -11,18 +11,56 @@ public class trapFunction : MonoBehaviour
     public Transform source; //trap
     private float distanceThreshold = 27f;
     private Rigidbody TargetRigid;
- 
 
-    // Update is called once per frame
-    void Update()
+
+    private void Start()
     {
+        GameObject[] gameObjects;
+        gameObjects = GameObject.FindGameObjectsWithTag("Enemy");
 
+        if (gameObjects.Length > 0)
+        {
+            Debug.Log("Enemy tag is present...");
+        }
+
+        if (gameObjects.Length > 0)
+        {
+            Debug.Log("Enemy tag is present...");
+        }
+    }
+
+    //public GameObject FindClosestEnemy()
+    //{
+    //    GameObject[] gos;
+    //    gos = GameObject.FindGameObjectsWithTag("Enemy");
+    //    GameObject closest = null;
+    //    float distance = Mathf.Infinity;
+    //    Vector3 position = transform.position;
+    //    foreach (GameObject go in gos)
+    //    {
+    //        Vector3 diff = go.transform.position - position;
+    //        float curDistance = diff.sqrMagnitude;
+    //        if (curDistance < distance)
+    //        {
+    //            closest = go;
+    //            distance = curDistance;
+                
+    //        }
+    //    }
+    //    return closest;
+       
+    //}
+
+// Update is called once per frame
+void Update()
+    {
+        StartCoroutine(wait2seconds());
         float forceToApplyX = Random.Range(-0.01f, 0.02f);
         float forceToApplyY = Random.Range(-0.01f, 0.02f);
         float forceToApplyZ = Random.Range(-0.01f, 0.02f);
         TargetRigid = target.GetComponent<Rigidbody>();
 
-
+        
 
         // new way, checks in a radius if there is any object of specific tag
         // then applies force to those objects
@@ -47,17 +85,18 @@ public class trapFunction : MonoBehaviour
             float dist = Vector3.Distance(source.position, target.position);
 
             if(dist > distanceThreshold)
-            { 
-                Debug.Log("<color=green>[TRAP MECHANIC] - Object is not in range of the trap, current distance is </color>" + dist);
-                
+            {
+                //FindClosestEnemy();
+                //Debug.Log("<color=green>[TRAP MECHANIC] - Object is not in range of the trap, current distance is </color>" + dist);
+
             }
             if(dist == distanceThreshold)
             {
-                Debug.Log("<color=green>[TRAP MECHANIC] - Enemy is in range. Current distance is </color>" + dist);
+                //Debug.Log("<color=green>[TRAP MECHANIC] - Enemy is in range. Current distance is </color>" + dist);
             }
             else if(dist < distanceThreshold)
             {
-                StartCoroutine(wait2seconds());
+                //StartCoroutine(wait2seconds());
                 TargetRigid.AddForce(new Vector3(forceToApplyX, forceToApplyY, forceToApplyZ), ForceMode.Impulse);
                 //Destroy(target.gameObject);
                 Debug.Log("<color=green>[TRAP MECHANIC] - Enemy interacted with a trap. Damaged! Distance is </color>" + dist);
@@ -82,11 +121,13 @@ public class trapFunction : MonoBehaviour
         //}
     }
 
+
+
     IEnumerator wait2seconds()
     {
-        Debug.Log(Time.time);
+        //Debug.Log(Time.time);
         yield return new WaitForSeconds(2);
-        Debug.Log(Time.time);
+        //Debug.Log(Time.time);
     }
 
     public void killNPC()
