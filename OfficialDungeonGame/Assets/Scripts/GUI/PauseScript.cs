@@ -31,18 +31,14 @@ public class PauseScript : MonoBehaviour
         Time.timeScale = 1f;
         GameIsPaused = false;
         Debug.Log("Game is resumed.");
-        //Cursor.lockState = CursorLockMode.Locked;
     }
 
     void Pause()
     {
-  
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
         Debug.Log("Game is paused.");
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
     }
 }
 
