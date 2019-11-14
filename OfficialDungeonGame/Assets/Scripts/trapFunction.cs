@@ -60,22 +60,6 @@ void Update()
         float forceToApplyZ = Random.Range(-0.01f, 0.02f);
         TargetRigid = target.GetComponent<Rigidbody>();
 
-        
-
-        // new way, checks in a radius if there is any object of specific tag
-        // then applies force to those objects
-        // NVM - need to find a way for 3D
-            //Collider2D[] hitColliders = Physics2D.OverlapCircleAll(center, radius);
-            //int i = 0;
-            //while (i < hitColliders.Length)
-            //{
-            //    if (hitColliders[i].tag == "CertainTag")
-            //    {
-            //        //do something
-            //    }
-            //    i++;
-            //}
-        
 
 
         // checks the public target, old way

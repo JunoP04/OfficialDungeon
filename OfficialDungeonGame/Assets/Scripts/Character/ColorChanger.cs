@@ -7,6 +7,7 @@ public class ColorChanger : MonoBehaviour
     Ray ray;
     RaycastHit hit;
     public Material newMat;
+    public Material unBuildable;
     public Material newMat2;
     public GameObject heartPrefab;
     public GameObject resourceCounter;
@@ -31,7 +32,23 @@ public class ColorChanger : MonoBehaviour
          
         if (Physics.Raycast(ray, out hit) && hit.collider.gameObject.tag == "Blue")
         {
+         
             hit.collider.gameObject.GetComponent<Renderer>().material = newMat;
+            if (Input.GetMouseButtonDown(0))
+            {
+                hit.collider.gameObject.tag = "SolidBlue";
+            }
+            
+        }
+        else if (Physics.Raycast(ray, out hit) && hit.collider.gameObject.tag == "SolidBlue")
+        {
+
+            hit.collider.gameObject.GetComponent<Renderer>().material = unBuildable;
+            if (Input.GetMouseButtonDown(0))
+            {
+                hit.collider.gameObject.tag = "Blue";
+            }
+
         }
         if (Physics.Raycast(ray, out hit) && hit.collider.gameObject.tag == "Corpse")
         {

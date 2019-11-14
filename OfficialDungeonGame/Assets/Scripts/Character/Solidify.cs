@@ -6,6 +6,7 @@ public class Solidify : MonoBehaviour
 {
     public GameObject Object;
     public Material[] material;
+    public BoxCollider boxCol;
     Renderer rend;
     //private int intColor = 0;
 
@@ -18,14 +19,16 @@ public class Solidify : MonoBehaviour
     }
     void Update()
     {
-        if (Object.GetComponent<BoxCollider>().enabled)
+        if (this.tag == "SolidBlue")
         {
             rend.sharedMaterial = material[0];
+            boxCol.enabled = true;
         }
         //if (Object.GetComponent<BoxCollider>() == null)
         else
         {
             rend.sharedMaterial = material[1];
+            boxCol.enabled = false;
         }
         
         
