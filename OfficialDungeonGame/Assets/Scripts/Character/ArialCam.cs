@@ -37,7 +37,7 @@ public class ArialCam : MonoBehaviour
 
         }
         //Recenter camera on character
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.LeftControl))
         {
             pos.x = Character.transform.position.x;
             pos.z = Character.transform.position.z;
