@@ -18,7 +18,7 @@ public class spawnEnemies : MonoBehaviour
     {
 
     
-            if (Input.GetKey(KeyCode.Backspace))
+            if (Input.GetKeyDown(KeyCode.Backspace))
             {
             SpawnEnemy(targetSpawnWest.position);
             }
