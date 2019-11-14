@@ -25,7 +25,7 @@ public class PauseScript : MonoBehaviour
         }
     }
 
-    void Resume()
+    public void Resume()
     {
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
@@ -33,7 +33,7 @@ public class PauseScript : MonoBehaviour
         Debug.Log("Game is resumed.");
     }
 
-    void Pause()
+    public void Pause()
     {
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
