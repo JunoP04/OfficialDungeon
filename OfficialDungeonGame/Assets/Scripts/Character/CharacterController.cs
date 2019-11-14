@@ -6,8 +6,6 @@ public class CharacterController : MonoBehaviour
 {
     float Speed = 5.0F;
     float JHeight = 0.7f;
-    //efe
-    //private bool Jumping;
     public LayerMask PhysicalLayer;
     private Rigidbody rb;
     public float timeVar;
@@ -18,46 +16,48 @@ public class CharacterController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //hide the cursor on start
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         rb = GetComponent<Rigidbody>();
         col = GetComponent<CapsuleCollider>();
         timeVar = 1;
-        //efe
-        //Jumping = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(IsGrounded());
+        //get WASD/Arrow key movement inputs
         float translation = Input.GetAxis("Vertical") * Speed;
         float strafe = Input.GetAxis("Horizontal") * Speed;
         translation *= (Time.deltaTime * timeVar);
         strafe *= (Time.deltaTime * timeVar);
 
+        //apply movements to the character
         transform.Translate(strafe, 0, translation);
 
+        //jumping
         if (IsGrounded() && Input.GetKey(KeyCode.Space))
         {
 
             rb.AddForce(new Vector3(0, JHeight, 0), ForceMode.Impulse);
 
         }
+        //make the mouse visible on pause
         if (Input.GetKeyDown("escape"))
         {
            
                 Cursor.lockState = CursorLockMode.None;
                 mouseVisible = true;
-
-
         }
+
 
     }
 
 
 
 
-
+    //Check if the character is not in the air
     private bool IsGrounded()
     {
         

@@ -14,6 +14,7 @@ public class ArialCam : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Move mouse within "borderthickness" of any side of the screen, to pan the camera in that direction
         Vector3 pos = transform.position;
         if (Input.mousePosition.y >= Screen.height - panBorderThickness)
         {
@@ -35,7 +36,7 @@ public class ArialCam : MonoBehaviour
             pos.x -= panSpeed * Time.deltaTime;
 
         }
-
+        //Recenter camera on character
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             pos.x = Character.transform.position.x;
@@ -46,8 +47,8 @@ public class ArialCam : MonoBehaviour
 
         transform.position = pos;
 
-        pos.x = Mathf.Clamp(pos.x, -panLim.x, panLim.x);
-        pos.y = Mathf.Clamp(pos.y, -panLim.y, panLim.y);
+        //pos.x = Mathf.Clamp(pos.x, -panLim.x, panLim.x);
+        //pos.y = Mathf.Clamp(pos.y, -panLim.y, panLim.y);
 
     }
 }

@@ -24,6 +24,7 @@ public class ColorChanger : MonoBehaviour
 
     void Update()
     {
+        if (Time.timeScale == 0) return;
         ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out hit))
         {

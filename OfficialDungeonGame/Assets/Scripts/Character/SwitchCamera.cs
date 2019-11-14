@@ -16,11 +16,18 @@ public class SwitchCamera : MonoBehaviour
 
     private void Update()
     {
+        if (Time.timeScale == 0) return;
+        if (characterCam.active)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
         if (Input.GetKeyDown(KeyCode.V) && characterCam.active == true)
         {
             skyCube.SetActive(true);
             characterCam.SetActive(false);
-            Cursor.lockState = CursorLockMode.None; 
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
 
 
         }
@@ -29,6 +36,7 @@ public class SwitchCamera : MonoBehaviour
             skyCube.SetActive(false);
             characterCam.SetActive(true);
             Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
     }
 }

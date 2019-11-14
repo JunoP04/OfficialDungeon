@@ -3,7 +3,15 @@ guid: 9c1b93accf35baf44be02af27a97dd81
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - newMat: {fileID: 2100000, guid: 4f581fb7d4fab8248ab2d282695c4a75, type: 2}
+  - unBuildable: {fileID: 2100000, guid: f2a51dd21532b2043ba23cb13ca3064b, type: 2}
+  - newMat2: {fileID: 2100000, guid: 265298e9d02e28b449d96475f222cae1, type: 2}
+  - heartPrefab: {fileID: 6663948656777787261, guid: 8a5ceb4b6f1489947a8ff294ddcb5639,
+      type: 3}
+  - resourceCounter: {instanceID: 0}
+  - skyCube: {instanceID: 0}
+  - heartHealth: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
