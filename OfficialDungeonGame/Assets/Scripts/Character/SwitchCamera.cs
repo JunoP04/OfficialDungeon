@@ -9,19 +9,24 @@ public class SwitchCamera : MonoBehaviour
 
     private void Start()
     {
-
         characterCam.SetActive(true);
         Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void Update()
     {
+        //if the game is paused, do nothing
         if (Time.timeScale == 0) return;
+        //lock the cursor and hid it if you are in first person view
         if (characterCam.active)
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }
+
+
+        //**** everything below here can be made more efficient
+        //if you press V, and are in first person view swap to overhead view, adjust cursor accordingly
         if (Input.GetKeyDown(KeyCode.V) && characterCam.active == true)
         {
             skyCube.SetActive(true);
@@ -31,6 +36,7 @@ public class SwitchCamera : MonoBehaviour
 
 
         }
+        //if you press V, and are in overhead view, swap back to first person, adjust cursor accordingly
         else if (Input.GetKeyDown(KeyCode.V) && characterCam.active == false)
         {
             skyCube.SetActive(false);

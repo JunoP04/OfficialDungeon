@@ -39,6 +39,9 @@ public class PauseScript : MonoBehaviour
         Time.timeScale = 0f;
         GameIsPaused = true;
         Debug.Log("Game is paused.");
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 }
 
