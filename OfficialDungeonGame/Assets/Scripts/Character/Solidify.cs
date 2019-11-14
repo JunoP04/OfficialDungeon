@@ -8,23 +8,21 @@ public class Solidify : MonoBehaviour
     public Material[] material;
     public BoxCollider boxCol;
     Renderer rend;
-    //private int intColor = 0;
-
-    // Update is called once per frame
     private void Start()
     {
+        //on start get renderer, and set the material to the default of the object
         rend = GetComponent<Renderer>();
         rend.enabled = true;
         rend.sharedMaterial = material[0];
     }
     void Update()
     {
+        //if the tag is "SolidBlue" enable colider, otherwise disable it
         if (this.tag == "SolidBlue")
         {
             rend.sharedMaterial = material[0];
             boxCol.enabled = true;
         }
-        //if (Object.GetComponent<BoxCollider>() == null)
         else
         {
             rend.sharedMaterial = material[1];
