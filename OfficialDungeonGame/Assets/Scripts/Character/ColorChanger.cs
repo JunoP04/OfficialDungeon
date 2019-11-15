@@ -33,7 +33,7 @@ public class ColorChanger : MonoBehaviour
         }
         
         //if you are looking at something tagged **blue** (a buildable space), turn it light green to show it is buildable
-        if (Physics.Raycast(ray, out hit) && hit.collider.gameObject.tag == "Blue")
+        if (Physics.Raycast(ray, out hit, 21f) && hit.collider.gameObject.tag == "Blue")
         {
          
             hit.collider.gameObject.GetComponent<Renderer>().material = newMat;
@@ -45,7 +45,7 @@ public class ColorChanger : MonoBehaviour
             
         }
         //If you are looking at a cube that has already been solidified, make it look red
-        else if (Physics.Raycast(ray, out hit) && hit.collider.gameObject.tag == "SolidBlue")
+        else if (Physics.Raycast(ray, out hit, 21f) && hit.collider.gameObject.tag == "SolidBlue")
         {
 
             hit.collider.gameObject.GetComponent<Renderer>().material = unBuildable;
@@ -56,13 +56,13 @@ public class ColorChanger : MonoBehaviour
             }
         }
         //if you are looking at a corpse, it changes the color slighty to indicate you are looking at it
-        if (Physics.Raycast(ray, out hit) && hit.collider.gameObject.tag == "Corpse")
+        if (Physics.Raycast(ray, out hit, 10f) && hit.collider.gameObject.tag == "Corpse")
         {
             hit.collider.gameObject.GetComponent<Renderer>().material = newMat2;
         }
 
         //if you are looking at a buildable space, and press H, place the heart there
-        if (Input.GetKeyDown(KeyCode.H) && Physics.Raycast(ray, out hit) && hit.collider.gameObject.tag == "Blue")
+        if (Input.GetKeyDown(KeyCode.H) && Physics.Raycast(ray, out hit, 10f) && hit.collider.gameObject.tag == "Blue")
         {
             //get all the heart rooms and hearts already in the scene
             //get the transform of whatever you are looking at
@@ -91,7 +91,7 @@ public class ColorChanger : MonoBehaviour
         }
 
         //if you are looking at a corpse in first person view and press E, get an increased amount of resources
-        if (Input.GetKeyDown(KeyCode.E) && Physics.Raycast(ray, out hit) && hit.collider.gameObject.tag == "Corpse" && skyCube.active == false)
+        if (Input.GetKeyDown(KeyCode.E) && Physics.Raycast(ray, out hit, 10f) && hit.collider.gameObject.tag == "Corpse" && skyCube.active == false)
         {
             Destroy(hit.collider.gameObject);
             resourceCounter.GetComponent<ResourceMonitor>().number += 3;
