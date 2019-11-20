@@ -11,6 +11,10 @@ public class CharacterController : MonoBehaviour
     public float timeVar;
     public CapsuleCollider col;
 
+    //public CharacterStats characterStats;
+
+    
+
     //new bool check if mouse visible
     private bool mouseVisible = false;
     // Start is called before the first frame update
@@ -22,6 +26,8 @@ public class CharacterController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         col = GetComponent<CapsuleCollider>();
         timeVar = 1;
+
+        
     }
 
     // Update is called once per frame
@@ -50,8 +56,6 @@ public class CharacterController : MonoBehaviour
                 Cursor.lockState = CursorLockMode.None;
                 mouseVisible = true;
         }
-
-
     }
 
 

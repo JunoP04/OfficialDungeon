@@ -17,6 +17,7 @@ TagManager:
   - Corpse
   - Trap
   - SolidBlue
+  - Weapon
   layers:
   - Default
   - TransparentFX
