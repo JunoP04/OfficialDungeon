@@ -29,7 +29,7 @@ public class ColorChanger : MonoBehaviour
         ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out hit))
         {
-            Debug.Log(hit.collider.gameObject);
+            //Debug.Log(hit.collider.gameObject);
         }
         
         //if you are looking at something tagged **blue** (a buildable space), turn it light green to show it is buildable
