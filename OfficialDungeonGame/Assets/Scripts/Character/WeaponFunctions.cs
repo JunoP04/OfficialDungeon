@@ -6,13 +6,11 @@ public class WeaponFunctions : MonoBehaviour
 {
     public Animator meleeAnimation;
 
-    // Start is called before the first frame update
     void Start()
     {
         meleeAnimation = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         //if right click is pressed play melee animation
@@ -20,5 +18,12 @@ public class WeaponFunctions : MonoBehaviour
         {
             meleeAnimation.Play("Melee");
         }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("You hit something");
+        
+        meleeAnimation.Play("MeleeBack");
     }
 }

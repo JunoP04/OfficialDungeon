@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5132923878789845388}
   - component: {fileID: 5132923878789845389}
   - component: {fileID: 5132923878789845362}
-  - component: {fileID: 5132923878789845363}
+  - component: {fileID: 3208733202580758359}
   m_Layer: 0
   m_Name: Staff
   m_TagString: Weapon
@@ -94,25 +94,22 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!95 &5132923878789845363
-Animator:
-  serializedVersion: 3
+--- !u!54 &3208733202580758359
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5132923878789845361}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 97447ca6769a53f48abb5b65b04e8be8, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &5132923880126092665
 GameObject:
   m_ObjectHideFlags: 0
@@ -124,6 +121,8 @@ GameObject:
   - component: {fileID: 5132923880126092664}
   - component: {fileID: 5132923880126092667}
   - component: {fileID: 5132923880126092666}
+  - component: {fileID: 330169740320982279}
+  - component: {fileID: 990626160516106830}
   m_Layer: 0
   m_Name: Weapon
   m_TagString: Untagged
@@ -178,3 +177,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meleeAnimation: {fileID: 5132923880126092667}
+--- !u!136 &330169740320982279
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5132923880126092665}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.1
+  m_Height: 1.5008341
+  m_Direction: 1
+  m_Center: {x: 7.0917766e-15, y: 0.75048006, z: 0}
+--- !u!54 &990626160516106830
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5132923880126092665}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
