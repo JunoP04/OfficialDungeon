@@ -10,7 +10,6 @@ public class LaunchProjectile : MonoBehaviour
 
     private void Update()
     {
-        //U button shoots a projectile "FireBall" forward of the camera
         if (Input.GetKeyDown(KeyCode.U))
         {
             ShootBall();
@@ -19,7 +18,6 @@ public class LaunchProjectile : MonoBehaviour
 
     void ShootBall()
     {
-        //Shoots a projectile from the spawn point in front of the players
         GameObject go = Instantiate(projectile, spawnPoint.transform.position, Quaternion.identity);
         Rigidbody rb = go.GetComponentInChildren<Rigidbody>();
         rb.AddForce(transform.forward * launchVelocity);

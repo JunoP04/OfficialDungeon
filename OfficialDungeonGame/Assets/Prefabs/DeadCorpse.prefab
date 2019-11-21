@@ -258,10 +258,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1912674679826911168}
   - component: {fileID: 1912674679826911171}
-  - component: {fileID: 4843428067472837449}
   m_Layer: 0
   m_Name: DeadCorpse
-  m_TagString: Corpse
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -295,16 +294,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deadThing: {fileID: 1912674679826911169}
---- !u!65 &4843428067472837449
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1912674679826911169}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.8147583, y: 2.274009, z: 0.22520447}
-  m_Center: {x: 0.02630043, y: 0.47478688, z: -0.0044345856}
+  resourceCounter: {fileID: 0}
