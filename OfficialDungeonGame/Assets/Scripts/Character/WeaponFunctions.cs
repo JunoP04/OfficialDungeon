@@ -20,10 +20,17 @@ public class WeaponFunctions : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    //When the weapon hits an object with a collider run this function
+    public void OnTriggerEnter(Collider other)
     {
         Debug.Log("You hit something");
-        
+        //retracts the weapon when it hits anothe object with a collider
         meleeAnimation.Play("MeleeBack");
+        //Destroys any object with an Enemy tag
+        if(other.gameObject.tag == "Enemy")
+        {
+            Debug.Log("Killed");
+            Destroy(other.gameObject);
+        }
     }
 }

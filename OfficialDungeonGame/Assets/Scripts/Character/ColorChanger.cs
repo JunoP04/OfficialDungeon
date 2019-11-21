@@ -10,9 +10,11 @@ public class ColorChanger : MonoBehaviour
     public Material unBuildable;
     public Material newMat2;
     public GameObject heartPrefab;
-    public GameObject resourceCounter;
+    //public GameObject resourceCounter;
     public GameObject skyCube;
-    public GameObject heartHealth;
+    //public GameObject heartHealth;
+
+    public CharacterStats charStats;
 
     //var rend = GetComponent.<Renderer>();
 
@@ -27,11 +29,11 @@ public class ColorChanger : MonoBehaviour
         //always raycast out from the mouse position
         if (Time.timeScale == 0) return;
         ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out hit))
-        {
-            Debug.Log(hit.collider.gameObject);
-        }
-        
+        //if (Physics.Raycast(ray, out hit))
+        //{
+        //    Debug.Log(hit.collider.gameObject);
+        //}
+
         //if you are looking at something tagged **blue** (a buildable space), turn it light green to show it is buildable
         if (Physics.Raycast(ray, out hit, 21f) && hit.collider.gameObject.tag == "Blue")
         {
@@ -86,17 +88,19 @@ public class ColorChanger : MonoBehaviour
             //retag the target room "heartRoom"
             hit.collider.gameObject.tag = "HeartRoom";
             //Enable hearth health in the HUD
-            heartHealth.SetActive(true);
+           // heartHealth.SetActive(true);
 
         }
 
         //if you are looking at a corpse in first person view and press E, get an increased amount of resources
-        if (Input.GetKeyDown(KeyCode.E) && Physics.Raycast(ray, out hit, 10f) && hit.collider.gameObject.tag == "Corpse" && skyCube.active == false)
+        if (Input.GetKeyDown(KeyCode.E) && Physics.Raycast(ray, out hit) && hit.collider.gameObject.tag == "Corpse" && skyCube.active == false)
         {
+            Debug.Log("Looted Corpse");
             Destroy(hit.collider.gameObject);
-            resourceCounter.GetComponent<ResourceMonitor>().number += 3;
-
+            charStats.resources = charStats.resources + 3;
+            charStats.resourceCounter.text = charStats.resources.ToString();
         }
+
 
     }
 }

@@ -108,6 +108,7 @@ GameObject:
   - component: {fileID: 8912500146836550649}
   - component: {fileID: 8912500146836550628}
   - component: {fileID: 8912500146836550629}
+  - component: {fileID: 2464306336010886601}
   m_Layer: 0
   m_Name: Character
   m_TagString: Player
@@ -224,6 +225,24 @@ MonoBehaviour:
     m_Bits: 1536
   timeVar: 0
   col: {fileID: 8912500146836550649}
+--- !u!114 &2464306336010886601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8912500146836550654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 441d0a78f272de44caae01f525bcb85c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementSpeed: 5
+  health: 100
+  strenghth: 20
+  heartHealth: 100
+  healthBar: {fileID: 0}
+  heartHealthBar: {fileID: 0}
 --- !u!1 &8912500146968914051
 GameObject:
   m_ObjectHideFlags: 0
@@ -399,6 +418,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8912500146836550650}
     m_Modifications:
+    - target: {fileID: 5132923880126092665, guid: 85c8f511b02b232418a267c972a40cb4,
+        type: 3}
+      propertyPath: m_Name
+      value: Weapon
+      objectReference: {fileID: 0}
     - target: {fileID: 5132923880126092664, guid: 85c8f511b02b232418a267c972a40cb4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -417,12 +441,12 @@ PrefabInstance:
     - target: {fileID: 5132923880126092664, guid: 85c8f511b02b232418a267c972a40cb4,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.000000029802322
+      value: -0.00000008940697
       objectReference: {fileID: 0}
     - target: {fileID: 5132923880126092664, guid: 85c8f511b02b232418a267c972a40cb4,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000029802322
+      value: -0.00000008940697
       objectReference: {fileID: 0}
     - target: {fileID: 5132923880126092664, guid: 85c8f511b02b232418a267c972a40cb4,
         type: 3}
@@ -453,11 +477,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 5132923880126092665, guid: 85c8f511b02b232418a267c972a40cb4,
-        type: 3}
-      propertyPath: m_Name
-      value: Weapon
       objectReference: {fileID: 0}
     - target: {fileID: 5132923878789845363, guid: 85c8f511b02b232418a267c972a40cb4,
         type: 3}

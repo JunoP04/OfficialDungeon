@@ -13,10 +13,6 @@ public class CharacterController : MonoBehaviour
 
     //public CharacterStats characterStats;
 
-    
-
-    //new bool check if mouse visible
-    private bool mouseVisible = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,24 +38,24 @@ public class CharacterController : MonoBehaviour
         //apply movements to the character
         transform.Translate(strafe, 0, translation);
 
-        //jumping
+        //Space key makes the character jump
         if (IsGrounded() && Input.GetKey(KeyCode.Space))
         {
 
             rb.AddForce(new Vector3(0, JHeight, 0), ForceMode.Impulse);
 
         }
-        //make the mouse visible on pause
-        if (Input.GetKeyDown("escape"))
+
+        //While Shift key is pressed character sprints
+        if(Input.GetKey(KeyCode.LeftShift) && IsGrounded())
         {
-           
-                Cursor.lockState = CursorLockMode.None;
-                mouseVisible = true;
+            Speed = 10.0f;
+        }
+        else
+        {
+            Speed = 5.0f;
         }
     }
-
-
-
 
     //Check if the character is not in the air
     private bool IsGrounded()
