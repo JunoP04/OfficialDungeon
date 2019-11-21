@@ -82,7 +82,7 @@ public class EnemyBaseAI : MonoBehaviour
         {
             maxInt = 0;        }
         
-        this.transform.Rotate(0, 90, 0);
+        
         int rightLeft = 0;
         Debug.Log(wallRightClose + " " + wallLeftClose);
         //if walls are too close right and left go back
@@ -96,11 +96,11 @@ public class EnemyBaseAI : MonoBehaviour
 
             if (rightLeft >= 0)
             {
-                this.transform.Rotate(0, 90, 0);
+                this.transform.Rotate(0, 180, 0);
             }
             else if (rightLeft < 0)
             {
-                this.transform.Rotate(0, -90, 0);
+                this.transform.Rotate(0, 0, 0);
             }
         }
         Debug.Log(rightLeft);
