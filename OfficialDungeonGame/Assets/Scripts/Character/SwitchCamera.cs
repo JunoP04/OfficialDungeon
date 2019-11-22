@@ -6,6 +6,7 @@ public class SwitchCamera : MonoBehaviour
 {
     public GameObject characterCam;
     public GameObject skyCube;
+    public GameObject crosshair;
 
     private void Start()
     {
@@ -30,9 +31,12 @@ public class SwitchCamera : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.V) && characterCam.active == true)
         {
             skyCube.SetActive(true);
+            skyCube.transform.position = new Vector3(characterCam.transform.position.x, 34, characterCam.transform.position.z);
             characterCam.SetActive(false);
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
+            crosshair.SetActive(false);
+
 
 
         }
@@ -43,6 +47,7 @@ public class SwitchCamera : MonoBehaviour
             characterCam.SetActive(true);
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
+            crosshair.SetActive(true);
         }
     }
 }

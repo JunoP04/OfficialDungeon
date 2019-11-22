@@ -40,6 +40,7 @@ public class GameManager : MonoBehaviour
         {
             UnPause();
         }
+  
     }
     IEnumerator Pause5Seconds()
     {
@@ -76,4 +77,8 @@ public class GameManager : MonoBehaviour
         mainCam.GetComponent<CamMouseLook>().enabled = true;
         Cursor.lockState = CursorLockMode.Locked;
     }
+
+
+
+
 }
