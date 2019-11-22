@@ -93,14 +93,16 @@ public class ColorChanger : MonoBehaviour
         }
 
         //if you are looking at a corpse in first person view and press E, get an increased amount of resources
-        if (Input.GetKeyDown(KeyCode.E) && Physics.Raycast(ray, out hit) && hit.collider.gameObject.tag == "Corpse" && skyCube.active == false)
+        if (Physics.Raycast(ray, out hit, 20f) && skyCube.active == false)
         {
-            Debug.Log("Looted Corpse");
-            Destroy(hit.collider.gameObject);
-            charStats.resources = charStats.resources + 3;
-            charStats.resourceCounter.text = charStats.resources.ToString();
+            if(Input.GetKeyDown(KeyCode.E) && hit.collider.gameObject.tag == "Corpse")
+            {
+                Debug.Log("Looted Corpse");
+                Destroy(hit.collider.gameObject);
+                charStats.resources = charStats.resources + 3;
+                charStats.resourceCounter.text = charStats.resources.ToString();
+            }
+
         }
-
-
     }
 }
