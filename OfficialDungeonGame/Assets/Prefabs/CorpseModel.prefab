@@ -95,7 +95,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deadThing: {fileID: 5412964189681173589}
-  resourceCounter: {fileID: 0}
 --- !u!114 &5412964189681173547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,6 +111,7 @@ MonoBehaviour:
   material:
   - {fileID: 2100000, guid: 265298e9d02e28b449d96475f222cae1, type: 2}
   - {fileID: 2100000, guid: 265298e9d02e28b449d96475f222cae1, type: 2}
+  boxCol: {fileID: 0}
 --- !u!136 &5412964189681173590
 CapsuleCollider:
   m_ObjectHideFlags: 0
