@@ -11,6 +11,7 @@ public class Solidify : MonoBehaviour
     private void Start()
     {
         //on start get renderer, and set the material to the default of the object
+        boxCol = Object.GetComponent<BoxCollider>();
         rend = GetComponent<Renderer>();
         rend.enabled = true;
         rend.sharedMaterial = material[0];

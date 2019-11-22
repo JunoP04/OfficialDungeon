@@ -9,6 +9,8 @@ public class ArialCam : MonoBehaviour
     public Vector2 panLim;
     public float panBorderThickness = 20f;
     public GameObject Character;
+    
+
 
 
     // Update is called once per frame
