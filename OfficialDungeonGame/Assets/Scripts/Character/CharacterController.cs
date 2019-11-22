@@ -47,7 +47,7 @@ public class CharacterController : MonoBehaviour
         }
 
         //While Shift key is pressed character sprints
-        if(Input.GetKey(KeyCode.LeftShift))
+        if(Input.GetKey(KeyCode.LeftShift) && IsGrounded())
         {
             Speed = 10.0f;
         }

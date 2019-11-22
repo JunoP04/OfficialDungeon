@@ -11,6 +11,6 @@ public class SpawnCorpse : MonoBehaviour
     {
         deathPoint = gameObject.GetComponent<Transform>().position;
         Instantiate(corpse, deathPoint, Quaternion.identity);
-        Debug.Log("Corpse Spawned at" + deathPoint);
+        Debug.Log("Corpse Spawned");
     }
 }
