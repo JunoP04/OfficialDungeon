@@ -23,9 +23,9 @@ public class trapFunction : MonoBehaviour
             Debug.Log("Enemy tag is present...");
         }
 
-        if (gameObjects.Length <= 0)
+        if (gameObjects.Length > 0)
         {
-            Debug.Log("Enemy tag is not present...");
+            Debug.Log("Enemy tag is present...");
         }
     }
 

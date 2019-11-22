@@ -44,9 +44,11 @@ public class ArialCam : MonoBehaviour
         }
 
 
-        //move the camera
+
         transform.position = pos;
-        
+
+        //pos.x = Mathf.Clamp(pos.x, -panLim.x, panLim.x);
+        //pos.y = Mathf.Clamp(pos.y, -panLim.y, panLim.y);
 
     }
 }
