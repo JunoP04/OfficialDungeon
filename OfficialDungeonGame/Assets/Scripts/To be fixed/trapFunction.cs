@@ -58,7 +58,7 @@ void Update()
         float forceToApplyX = Random.Range(-0.01f, 0.02f);
         float forceToApplyY = Random.Range(-0.01f, 0.02f);
         float forceToApplyZ = Random.Range(-0.01f, 0.02f);
-        TargetRigid = target.GetComponent<Rigidbody>();
+        //TargetRigid = target.GetComponent<Rigidbody>();
 
 
 

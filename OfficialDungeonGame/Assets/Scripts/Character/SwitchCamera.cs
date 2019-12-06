@@ -35,7 +35,8 @@ public class SwitchCamera : MonoBehaviour
             characterCam.SetActive(false);
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
-            crosshair.SetActive(false);
+            //FIX
+            //crosshair.SetActive(false);
 
 
 

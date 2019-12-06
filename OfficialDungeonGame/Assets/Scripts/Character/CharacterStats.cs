@@ -20,8 +20,8 @@ public class CharacterStats : MonoBehaviour
     private void Start()
     {
         //Assigns HUD Elements to Character Stats
-        healthBar.value = health;
-        heartHealthBar.value = heartHealth;
-        resourceCounter.text = resources.ToString();
+        //healthBar.value = health;
+        //heartHealthBar.value = heartHealth;
+        //resourceCounter.text = resources.ToString();
     }
 }

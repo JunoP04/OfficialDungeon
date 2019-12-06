@@ -33,8 +33,8 @@ public class EnemyBaseAI : MonoBehaviour
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 3f) && hit.collider.gameObject.tag == "SolidBlue" && checkingDir == false)
         {
             StartCoroutine(checkRightLeft());
+            GetComponent<NodeManager>().generateNode(this.transform.position, true, true, true, true);
         }
-        
     }
 
 
